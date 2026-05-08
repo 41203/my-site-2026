@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>三角洲行动陪玩</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF', // 主色（三角洲行动蓝）
+                        secondary: '#FF7D00', // 辅助色（橙色）
+                        neutral: '#F5F7FA' // 背景色
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .page-active { display: block !important; }
+            .nav-active { color: #165DFF !important; }
+            .card-hover { transition: transform 0.2s; }
+            .card-hover:hover { transform: translateY(-2px); }
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans">
+    <!-- 主内容区 -->
+    <div class="mx-auto px-4 pb-20"> <!-- 预留底部导航空间 -->
+        <!-- 首页 -->
+        <section id="home" class="page-active">
+            <div class="py-4">
+                <h1 class="text-[clamp(1.5rem,5vw,2rem)] font-bold text-gray-800 mb-4">三角洲行动陪玩</h1>
+                
+                <!-- 轮播图（简化版） -->
+                <div class="w-full h-40 bg-primary/10 rounded-lg mb-6 overflow-hidden">
+                    < img src="https://picsum.photos/seed/delta-banner/600/300" alt="三角洲行动陪玩推荐" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- 快捷入口 -->
+                <div class="grid grid-cols-4 gap-3 mb-6">
+                    <div class="flex flex-col items-center p-2 card-hover">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
+                            <i class="fa fa-gamepad text-primary"></i>
+                        </div>
+                        <span class="text-xs">快速陪玩</span>
+                    </div>
+                    <div class="flex flex-col items-center p-2 card-hover">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
+                            <i class="fa fa-rocket text-primary"></i>
+                        </div>
+                        <span class="text-xs">段位代练</span>
+                    </div>
+                    <div class="flex flex-col items-center p-2 card-hover">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
+                            <i class="fa fa-book text-primary"></i>
+                        </div>
+                        <span class="text-xs">战术教学</span>
+                    </div>
+                    <div class="flex flex-col items-center p-2 card-hover">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
+                            <i class="fa fa-trophy text-primary"></i>
+                        </div>
+                        <span class="text-xs">大神排行</span>
+                    </div>
+                </div>
+                
+                <!-- 推荐打手 -->
+                <h2 class="text-lg font-semibold mb-3">推荐打手</h2>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-white rounded-lg p-3 card-hover">
+                        <div class="flex items-center mb-2">
+                            < img src="https://picsum.photos/seed/delta-player1/100/100" alt="打手头像" class="w-10 h-10 rounded-full mr-2">
+                            <div>
+                                <h3 class="font-medium">战神阿杰</h3>
+                                <div class="flex items-center text-xs textellow-500">
+                                    <i class="fa fa-star"></i>
+                                    <span class="ml-1">4.9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">擅长突击手/狙击<br>价格：25元/小时</p >
+                        <button class="w-full bg-primary text-white text-sm py-1 rounded">立即预约</button>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 card-hover">
+                        <div class="flex items-center mb-2">
+                            < img src="https://picsum.photos/seed/delta-player2/100/100" alt="打手头像" class="w-10 h-10 rounded-full mr-2">
+                            <div>
+                                <h3 class="font-medium">狙神小帅</h3>
+                                <div class="flex items-center text-xs text-yellow-500">
+                                    <i class="fa fa-star"></i>
+                                    <span class="ml-1">4.8</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">擅长：狙击/侦察<br>价格：30元/小时</p >
+                        <button class="w-full bg-primary text-white text-sm py-1 rounded">立即预约</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类页面 -->
+        <section id="category" class="hidden">
+            <div class="py-4">
+                <h1 class="text-[clamp(1.5rem,5vw,2rem)] font-bold text-gray-800 mb-4">服务分类</h1>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-4 card-hover">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                            <i class="fa fa-users text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold mb-1">多人陪玩</h3>
+                        <p class="text-xs text-gray-500">组队开黑，轻松上分</p >
+                    </div>
+                    <div class="bg-white rounded-lg p-4 card-hover">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                            <i class="fa fa-user text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold mb-1">单人陪玩</h3>
+                        <p class="text-xs text-gray-500">专属大神，一对一指导</p >
+                    </div>
+                    <div class="bg-white rounded-lg p-4 card-hover">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                            <i class="fa fa-line-chart text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold mb-1">段位代练</h3>
+                        <p class="text-xs text-gray-500">安全高效，快速上星</p >
+                    </div>
+                    <div class="bg-white rounded-lg p-4 card-hover">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                            <i class="fa fa-book text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold mb-1">战术教学</h3>
+                        <p class="text-xs text-gray-500">专业指导，提升技术</p >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 打手页面 -->
+        <section id="player" class="hidden">
+            <div class="py-4">
+                <h1 class="text-[clamp(1.5rem,5vw,2rem)] font-bold text-gray-800 mb-4">全部打手</h1>
+                
+                <!-- 筛选栏 -->
+                <div class="flex items-center mb-4">
+                    <input type="text" placeholder="搜索打手" class="flex-1 px-3 py-2 border border-gray-200-l-lg focus:outline-none focus:border-primary">
+                    <button class="bg-primary text-white px-3 py-2 rounded-r-lg">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- 打手列表 -->
+                <div class="space-y-3">
+                    <div class="bg-white rounded-lg p-3 flex items-center card-hover">
+                        < img src="https://picsum.photos/seed/delta-player3/100/100" alt="打手头像" class="w-1 h-12 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-medium">突击手小明</h3>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">28元/小时</span>
+                            </div>
+                            <div class="flex items-center text-xs mt-1">
+                                <div class="flex text-yellow-500 mr-2">
+                                    <i class="fa fa-star"></i>
+                                    <span class="ml-1">4.7</span>
+                                </div>
+                                <span class="text-gray-500">擅长：突击/近战</span>
+                            </div>
+                        </div>
+                        <button class="text-primary">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 flex items-center card-hover">
+                        < img src="https://picsum.photos/seed/delta-player4/100/100" alt="打手头像" class="w-12 h-12 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-medium">侦察兵小莉</h3>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">25元/小时</span>
+                            </div>
+                            <div class="flex items-center text-xs mt-1">
+                                <div class="flex text-yellow-500 mr-2">
+                                    <i class="fa fa-star"></i>
+                                    <span="ml-1">4.9</span>
+                                </div>
+                                <span class="text-gray-500">擅长：侦察/远程</span>
+                            </div>
+                        </div>
+                        <button class="text-primary">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 我的页面 -->
+        <section id="mine" class="hidden">
+            <div class="py-4">
+                <div class="bg-primary text-white p-4 rounded-lg mb-4">
+                    <div class="flex items-center">
+                        < img src="https://picsum.photos/seed/user/100/100" alt="用户头像" class="w-14 h-14 rounded-full mr-3">
+                        <div>
+                            <h3 class="font-medium">游客用户</h3>
+                            <p class="text-xs opacity-80">点击登录/注册</p >
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-3 mb-4">
+                    <div class="bg-white rounded-lg p-3 text-center card-hover">
+                        <p class="text-2xl font-bold text-primary mb-1">0</p >
+                        <span class="text-xs">我的订单</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center card-hover">
+                        <p class="text-2xl font-bold text-primary mb-1">0</p >
+                        <span class="text-xs">我的收藏</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center card-hover">
+                        <p class="text-2xl font-bold text-primary mb-1">0</p >
+                        <span class="text-xs">我的余额</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg p-4">
+                    <h3 class="font-semibold mb-3">功能菜单</h3>
+                    < class="grid grid-cols-2 gap-3">
+                        <div class="flex items-center p-2 card-hover">
+                            <i class="fa fa-cog text-primary mr-2"></i>
+                            <span class="text-sm">设置</span>
+                        </div>
+                        <div class="flex items-center p-2 card-hover">
+                            <i class="fa fa-question-circle text-primary mr-2"></i>
+                            <span class="text-sm">帮助中心</span>
+                        </div>
+                        <div class="flex items-center p-2 card-hover">
+                            <i class="fa fa-shield text-primary mr-2"></i>
+                            <span class="text-sm">安全中心</span>
+                        </div>
+                        <div class="flex items-center p-2 card-hover">
+                            <i class="fa fa-phone text-primary mr-2"></i>
+                            <span class="text-sm">联系客服</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-2 px-4">
+        <div class="flex justify-around">
+            <button class="nav-btn flex flex-col items-center text-gray-500 nav-active" data-page="home">
+                <i class="fa fa-home text-lg"></i>
+                <span class="text-xs mt-1">首页</span>
+            </button>
+            <button class="nav-btn flex flex-col items-center text-gray-500" data-page="category">
+                <i class="fa fa-th text-lg"></i>
+                <span class="text-xs mt-1">分类</span>
+            </button>
+            <button class="nav-btn flex flex-col items-center text-gray-500" data-page="player">
+                <i class="fa fa-user-circle text-lg"></i>
+                <span class="text-xs mt-1">打手</span>
+            </button>
+            <button class="nav-btn flex flex-col items-center text-gray-500" data-page="mine">
+                <i class="fa fa-user text-lg"></i>
+                <span class="text-xs mt-1">我的</span>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+        // 底部导航切换逻辑
+        const navBtns = document.querySelectorAll('.nav-btn');
+        const pages = document.querySelectorAll('section');
+        
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 切换导航选中状态
+                navBtns.forEach(b => b.classList.remove('nav-active'));
+                btn.classList.add('nav-active');
+                
+                // 切换页面显示
+                const pageId = btn.dataset.page;
+                pages.forEach(page => {
+                    if (page.id === pageId) {
+                        page.classList.add('page-active');
+                        page.classList.remove('hidden');
+                    } else {
+                        page.classList.remove('page-active');
+                        page.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
